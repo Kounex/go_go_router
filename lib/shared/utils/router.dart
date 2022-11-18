@@ -47,7 +47,7 @@ class RouterUtils {
               context,
               state,
               SlidesView(
-                id: int.tryParse(state.queryParams['id'] ?? '') ?? 0,
+                id: int.tryParse(state.queryParams['id'] ?? '') ?? 1,
               ),
             ),
           ),
@@ -80,7 +80,7 @@ class StartRoute extends BaseRoute {
 }
 
 class SlidesRoute extends BaseRoute {
-  SlidesRoute({int? id}) : super('/slides?id=${id ?? 0}');
+  SlidesRoute({int? id}) : super('/slides?id=${id ?? 1}');
 }
 
 class ExamplesRoute extends BaseRoute {

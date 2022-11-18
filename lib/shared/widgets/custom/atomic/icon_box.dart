@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../types/extensions/color.dart';
 
 class IconBox extends StatelessWidget {
