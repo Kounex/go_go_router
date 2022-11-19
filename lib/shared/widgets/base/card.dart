@@ -22,7 +22,7 @@ class BaseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 750,
+      width: 500,
       child: Card(
         margin: this.margin,
         shape: RoundedRectangleBorder(

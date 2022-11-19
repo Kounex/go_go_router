@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class WebScaffold extends StatelessWidget {
+  final PreferredSizeWidget? appBar;
   final Widget? drawer;
   final Widget? body;
 
@@ -8,6 +9,7 @@ class WebScaffold extends StatelessWidget {
 
   const WebScaffold({
     super.key,
+    this.appBar,
     this.drawer,
     this.body,
     this.backgroundColor,
@@ -18,6 +20,7 @@ class WebScaffold extends StatelessWidget {
     return SelectionArea(
       child: Scaffold(
         backgroundColor: this.backgroundColor,
+        appBar: this.appBar,
         drawer: this.drawer,
         body: this.body,
       ),

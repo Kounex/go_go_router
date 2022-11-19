@@ -43,7 +43,7 @@ class _VideoContentState extends State<VideoContent> {
         ? Column(
             children: [
               SizedBox(
-                height: 300.0,
+                height: 250.0,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -141,7 +141,7 @@ class _VideoContentState extends State<VideoContent> {
                   ),
                 ),
                 child: SizedBox(
-                  width: 300.0,
+                  width: 240.0,
                   height: 24.0,
                   child: Align(
                     child: LinearProgressIndicator(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_go_router/views/slides/widgets/slide_enumeration_block.dart';
 
-class NavigationBasics1 extends StatelessWidget {
-  const NavigationBasics1({super.key});
+class NavigationBasics1Slide extends StatelessWidget {
+  const NavigationBasics1Slide({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +19,7 @@ class NavigationBasics1 extends StatelessWidget {
               level: 1,
             ),
             SlideEnumerationEntry(
-              text:
-                  'Usually referenced when taling about Single Page Applications (SPA)',
+              text: 'Usually with Single Page Applications (SPA)',
               level: 1,
             ),
             SlideEnumerationEntry(

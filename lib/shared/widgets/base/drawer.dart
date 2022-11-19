@@ -40,7 +40,13 @@ class BaseDrawer extends StatelessWidget {
                 entry.title,
                 style: Theme.of(context).textTheme.headline6,
               ),
-              onTap: entry.onTap,
+              onTap: () {
+                Navigator.of(context).pop();
+                Future.delayed(
+                  const Duration(milliseconds: 300),
+                  () => entry.onTap(),
+                );
+              },
             ),
         ],
       ),

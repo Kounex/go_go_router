@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/slide_enumeration_block.dart';
+import '../widgets/slide_enumeration_block.dart';
 
 class IntroductionSlide extends StatelessWidget {
   const IntroductionSlide({super.key});
@@ -34,20 +34,18 @@ class IntroductionSlide extends StatelessWidget {
               ],
             ),
             ClipRRect(
-              child: LayoutBuilder(builder: (context, constriants) {
-                return Container(
-                  width: 125,
-                  height: 125,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12.0),
-                    image: DecorationImage(
-                      image: AssetImage(
-                        'assets/images/cropped.jpg',
-                      ),
+              child: Container(
+                width: 125,
+                height: 125,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12.0),
+                  image: DecorationImage(
+                    image: AssetImage(
+                      'assets/images/cropped.jpg',
                     ),
                   ),
-                );
-              }),
+                ),
+              ),
             ),
           ],
         ),

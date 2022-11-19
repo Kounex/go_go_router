@@ -47,7 +47,7 @@ class HomeView extends StatelessWidget {
                       Text(
                           'This example is showing the basic Navigator approach making use of '),
                       CodeSnippet(
-                        code: CodeSnippets.imperativeBasicHome.text,
+                        code: CodeSnippets.navigatorPushBlueprint.text,
                       ),
                     ],
                   ),

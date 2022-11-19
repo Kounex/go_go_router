@@ -97,6 +97,7 @@ class _SlideScaffoldState extends State<SlideScaffold> {
                   height: min(400, MediaQuery.of(context).size.height / 2),
                   child: PageView.builder(
                     controller: _controller,
+                    physics: NeverScrollableScrollPhysics(),
                     itemCount: this.widget.slides.length,
                     itemBuilder: (context, index) => SingleChildScrollView(
                       child: Padding(
@@ -116,9 +117,9 @@ class _SlideScaffoldState extends State<SlideScaffold> {
                                       letterSpacing: 2.0,
                                     ),
                               ),
-                              SizedBox(height: 12.0),
+                              SizedBox(height: 6.0),
                               Divider(height: 0),
-                              SizedBox(height: 24.0),
+                              SizedBox(height: 12.0),
                             ],
                             Flexible(
                               child: Align(

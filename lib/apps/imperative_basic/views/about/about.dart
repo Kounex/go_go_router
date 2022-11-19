@@ -8,22 +8,10 @@ class AboutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WebScaffold(
-      body: CustomScrollView(
-        physics: const AlwaysScrollableScrollPhysics(),
-        slivers: [
-          SliverAppBar.large(
-            title: const Text('About'),
-          ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) => Text(
-                index.toString(),
-              ),
-              childCount: 100,
-            ),
-          ),
-        ],
+      appBar: AppBar(
+        title: Text('About'),
       ),
+      body: SizedBox(),
     );
   }
 }

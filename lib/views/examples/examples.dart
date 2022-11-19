@@ -17,7 +17,7 @@ class ExamplesView extends StatelessWidget {
           content: Center(
             child: Column(
               children: [
-                SizedBox(height: 24.0),
+                SizedBox(height: 12.0),
                 CrookedActions(
                   actions: [
                     CrookedAction(
