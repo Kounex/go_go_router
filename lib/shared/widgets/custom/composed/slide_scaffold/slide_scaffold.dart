@@ -3,10 +3,11 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:go_go_router/shared/widgets/base/card.dart';
 import 'package:go_go_router/shared/widgets/base/web_scaffold.dart';
-import 'package:go_go_router/shared/widgets/custom/composed/slide_scaffold/slide_keyboard_listener.dart';
-import 'package:go_go_router/shared/widgets/custom/composed/slide_scaffold/slide_number.dart';
+import 'package:go_go_router/shared/widgets/custom/composed/slide_scaffold/keyboard_listener.dart';
+import 'package:go_go_router/shared/widgets/custom/composed/slide_scaffold/number.dart';
+import 'package:go_go_router/shared/widgets/custom/composed/slide_scaffold/scale.dart';
 
-import 'slide_controls.dart';
+import 'controls.dart';
 
 class Slide {
   final String? title;
@@ -41,6 +42,8 @@ class _SlideScaffoldState extends State<SlideScaffold> {
   late int _id;
   late PageController _controller;
 
+  double _slideScale = 1.0;
+
   @override
   void initState() {
     super.initState();
@@ -48,6 +51,10 @@ class _SlideScaffoldState extends State<SlideScaffold> {
     _id = this.widget.id ?? 1;
     _controller =
         this.widget.controller ?? PageController(initialPage: _id - 1);
+  }
+
+  void _changeSlideScale(double increment) {
+    setState(() => _slideScale += increment);
   }
 
   @override
@@ -60,75 +67,78 @@ class _SlideScaffoldState extends State<SlideScaffold> {
         alignment: Alignment.center,
         children: [
           WebScaffold(
-            body: Center(
-              child: BaseCard(
-                padding: const EdgeInsets.symmetric(vertical: 24.0),
-                decorations: [
-                  Positioned(
-                    bottom: 0,
-                    right: 0,
-                    child: Transform.rotate(
-                      angle: pi / 3,
-                      child: Transform.translate(
-                        offset: Offset(150, 80),
-                        child: Container(
-                          width: 150.0,
-                          height: 250.0,
-                          color: Theme.of(context).colorScheme.primary,
+            body: Transform.scale(
+              scale: _slideScale,
+              child: Center(
+                child: BaseCard(
+                  padding: const EdgeInsets.symmetric(vertical: 24.0),
+                  decorations: [
+                    Positioned(
+                      bottom: 0,
+                      right: 0,
+                      child: Transform.rotate(
+                        angle: pi / 3,
+                        child: Transform.translate(
+                          offset: Offset(150, 80),
+                          child: Container(
+                            width: 150.0,
+                            height: 250.0,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  if (this.widget.slides.length > 1)
-                    Positioned(
-                      bottom: 18,
-                      right: 32,
-                      child: Builder(
-                        builder: (context) {
-                          return SlideNumber(
-                            controller: _controller,
-                            id: _id,
-                          );
-                        },
+                    if (this.widget.slides.length > 1)
+                      Positioned(
+                        bottom: 18,
+                        right: 32,
+                        child: Builder(
+                          builder: (context) {
+                            return SlideNumber(
+                              controller: _controller,
+                              id: _id,
+                            );
+                          },
+                        ),
                       ),
-                    ),
-                ],
-                child: SizedBox(
-                  height: min(400, MediaQuery.of(context).size.height / 2),
-                  child: PageView.builder(
-                    controller: _controller,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemCount: this.widget.slides.length,
-                    itemBuilder: (context, index) => SingleChildScrollView(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            if (this.widget.slides[index].title != null) ...[
-                              Text(
-                                this.widget.slides[index].title!,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .overline!
-                                    .copyWith(
-                                      fontSize: 32.0,
-                                      letterSpacing: 2.0,
-                                    ),
+                  ],
+                  child: SizedBox(
+                    height: min(400, MediaQuery.of(context).size.height / 2),
+                    child: PageView.builder(
+                      controller: _controller,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: this.widget.slides.length,
+                      itemBuilder: (context, index) => SingleChildScrollView(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              if (this.widget.slides[index].title != null) ...[
+                                Text(
+                                  this.widget.slides[index].title!,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .overline!
+                                      .copyWith(
+                                        fontSize: 32.0,
+                                        letterSpacing: 2.0,
+                                      ),
+                                ),
+                                SizedBox(height: 6.0),
+                                Divider(height: 1),
+                                SizedBox(height: 12.0),
+                              ],
+                              Flexible(
+                                child: Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: this.widget.slides[index].content ??
+                                      SizedBox(),
+                                ),
                               ),
-                              SizedBox(height: 6.0),
-                              Divider(height: 1),
-                              SizedBox(height: 12.0),
                             ],
-                            Flexible(
-                              child: Align(
-                                alignment: Alignment.centerLeft,
-                                child: this.widget.slides[index].content ??
-                                    SizedBox(),
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
                       ),
                     ),
@@ -145,15 +155,26 @@ class _SlideScaffoldState extends State<SlideScaffold> {
                 /// the [PageView] inside [SlideScaffold] to be built and make
                 /// use of the [PageController], therefore it's possible to access
                 /// the [page] property of the controller
-                child: Builder(builder: (context) {
-                  return SlideControls(
-                    controller: _controller,
-                    id: _id,
-                    amountSlides: this.widget.slides.length,
-                  );
-                }),
+                child: Builder(
+                  builder: (context) {
+                    return SlideControls(
+                      controller: _controller,
+                      id: _id,
+                      amountSlides: this.widget.slides.length,
+                    );
+                  },
+                ),
               ),
-            )
+            ),
+          Positioned(
+            bottom: 24.0 + MediaQuery.of(context).viewInsets.bottom,
+            right: 24.0,
+            child: Card(
+              child: SlideScale(
+                changeScale: _changeSlideScale,
+              ),
+            ),
+          ),
         ],
       ),
     );
