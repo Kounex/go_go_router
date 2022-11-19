@@ -33,7 +33,11 @@ class ChallengesSlide extends StatelessWidget {
               level: 1,
             ),
             SlideEnumerationEntry(
-              text: 'Manual deeplinks',
+              text: 'Tough times with deeplinks',
+              extraTopSpacing: 4.0,
+            ),
+            SlideEnumerationEntry(
+              text: 'Still no correct navigation journey',
               extraTopSpacing: 4.0,
             ),
           ],
