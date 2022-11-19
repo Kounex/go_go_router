@@ -37,7 +37,7 @@ class HomeView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                          'This is the reference project showasing different navigation approaches, from basic, imperative Navigator API to the more advanced, declarative Router API!\n\nYou are currently viewing the example in:'),
+                          'This is the reference project showcasing different navigation approaches, from basic, imperative Navigator API to the more advanced, declarative Router API!\n\nYou are currently viewing the example in:'),
                       Text(
                         '\nimperative_basic\n',
                         style: TextStyle(
