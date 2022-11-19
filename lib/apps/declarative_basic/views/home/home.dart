@@ -25,7 +25,7 @@ class HomeView extends StatelessWidget {
               [
                 ViewHeader(
                   icon: Icons.home,
-                  title: 'imperative_basic',
+                  title: 'declarative_basic',
                   subtitle: 'Go, Go Router!',
                 ),
                 Divider(height: 1),
@@ -37,7 +37,7 @@ class HomeView extends StatelessWidget {
                       Text(
                           'This is the reference project showcasing different navigation approaches, from basic, imperative Navigator API to the more advanced, declarative Router API!\n\nYou are currently viewing the example in:'),
                       Text(
-                        '\nimperative_basic\n',
+                        '\ndeclarative_basic\n',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                         ),

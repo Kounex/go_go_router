@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_go_router/apps/declarative_advanced/views/app.dart';
+import 'package:go_go_router/apps/declarative_basic/views/app.dart';
+import 'package:go_go_router/apps/imperative_advanced/views/app.dart';
 
 import '../../../shared/widgets/custom/atomic/crooked_actions.dart';
 import '../../apps/imperative_basic/views/app.dart';
@@ -32,7 +35,7 @@ class ExamplesView extends StatelessWidget {
                       text: 'Imperative Advanced',
                       onPressed: () => runApp(
                         ExampleWrapper(
-                          child: ImpererativeBasicApp(),
+                          child: ImpererativeAdvancedApp(),
                         ),
                       ),
                     ),
@@ -40,7 +43,7 @@ class ExamplesView extends StatelessWidget {
                       text: 'Declarative Basic',
                       onPressed: () => runApp(
                         ExampleWrapper(
-                          child: ImpererativeBasicApp(),
+                          child: DeclarativeBasicApp(),
                         ),
                       ),
                     ),
@@ -48,7 +51,7 @@ class ExamplesView extends StatelessWidget {
                       text: 'Declarative Advanced',
                       onPressed: () => runApp(
                         ExampleWrapper(
-                          child: ImpererativeBasicApp(),
+                          child: DeclarativeAdvancedApp(),
                         ),
                       ),
                     ),

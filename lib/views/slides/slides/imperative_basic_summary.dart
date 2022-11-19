@@ -19,7 +19,7 @@ class ImperativeBasicSummarySlide extends StatelessWidget {
               level: 1,
             ),
             SlideEnumerationEntry(
-              text: 'Get\'s the job done (we will tackle this soon)',
+              text: 'Gets the job done (we will tackle this soon)',
               level: 1,
             ),
             SlideEnumerationEntry(

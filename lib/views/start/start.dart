@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_go_router/shared/utils/router.dart';
+import 'package:go_go_router/shared/widgets/custom/atomic/social_block.dart';
+import 'package:ionicons/ionicons.dart';
 
 import '../../shared/widgets/base/web_scaffold.dart';
 
@@ -67,8 +69,17 @@ class StartView extends StatelessWidget {
               onPressed: () => showDialog(
                 context: context,
                 builder: (context) => SimpleDialog(
-                  title: Text('GitHub Repository'),
-                  contentPadding: const EdgeInsets.only(top: 12.0),
+                  title: SocialBlock(
+                    topPadding: 0,
+                    socialInfos: [
+                      SocialEntry(
+                        link: 'https://github.com/Kounex/go_go_router',
+                        linkText: 'Repository',
+                        icon: Ionicons.logo_github,
+                      ),
+                    ],
+                  ),
+                  contentPadding: const EdgeInsets.all(0),
                   children: [
                     Image.asset(
                       'assets/images/qr_code.png',

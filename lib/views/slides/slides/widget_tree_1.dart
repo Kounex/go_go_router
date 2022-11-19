@@ -26,6 +26,15 @@ class WidgetTree1Slide extends StatelessWidget {
                   SlideEnumerationEntry(
                     text: 'Composition of the widgets in our app',
                   ),
+                  SlideEnumerationEntry(
+                    text: 'Viewable in your IDE',
+                  ),
+                  SlideEnumerationEntry(
+                    text: 'Good way to understand your app structure',
+                  ),
+                  SlideEnumerationEntry(
+                    text: 'We need to decide when to update part of the tree',
+                  ),
                 ],
               ),
             ),

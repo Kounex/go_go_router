@@ -17,7 +17,7 @@ class ImperativeAdvancedSummarySlide extends StatelessWidget {
             ),
             SlideEnumerationEntry(
               text:
-                  'Still straight forward and get\'s the job done (we will tackle this soon, I promise 👀)',
+                  'Still straight forward and gets the job done (we will tackle this soon, I promise 👀)',
               level: 1,
             ),
             SlideEnumerationEntry(

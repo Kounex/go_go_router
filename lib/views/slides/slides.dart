@@ -6,6 +6,7 @@ import 'package:go_go_router/views/slides/slides/declarative_basic_summary.dart'
 import 'package:go_go_router/views/slides/slides/exercise_time.dart';
 import 'package:go_go_router/views/slides/slides/imperative_advanced_summary.dart';
 import 'package:go_go_router/views/slides/slides/imperative_basic_summary.dart';
+import 'package:go_go_router/views/slides/slides/navigation_basics_3.dart';
 import 'package:go_go_router/views/slides/slides/rise_of_flutter_web.dart';
 import 'package:go_go_router/views/slides/slides/router_basics_1.dart';
 import 'package:go_go_router/views/slides/slides/safe_space.dart';
@@ -22,6 +23,7 @@ import 'slides/example_steam.dart';
 import 'slides/introduction.dart';
 import 'slides/navigation_basics_1.dart';
 import 'slides/navigation_basics_2.dart';
+import 'slides/navigation_basics_4.dart';
 import 'slides/router_basics_2.dart';
 import 'slides/router_basics_3.dart';
 import 'slides/router_basics_4.dart';
@@ -87,6 +89,7 @@ class _SlidesViewState extends State<SlidesView> {
       content: ExampleSteamSlide(),
     ),
     Slide(
+      title: 'Baseline',
       content: NavigationBasics2Slide(),
     ),
     Slide(
@@ -122,6 +125,14 @@ class _SlidesViewState extends State<SlidesView> {
     Slide(
       title: 'Summary',
       content: ImperativeBasicSummarySlide(),
+    ),
+    Slide(
+      title: 'What about paths?!',
+      content: NavigationBasics3Slide(),
+    ),
+    Slide(
+      title: 'Named Routes',
+      content: NavigationBasics4Slide(),
     ),
     Slide(
       content: ExerciseTimeSlide(

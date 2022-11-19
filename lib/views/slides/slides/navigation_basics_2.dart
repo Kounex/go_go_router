@@ -9,7 +9,6 @@ class NavigationBasics2Slide extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 64.0),
         SlideEnumerationBlock(
           customEntries: [
             SlideEnumerationEntry(

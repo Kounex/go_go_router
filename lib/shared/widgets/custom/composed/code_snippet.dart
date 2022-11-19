@@ -62,7 +62,7 @@ class CodeSnippet extends StatelessWidget {
               syntax: Syntax.DART, // Language
               syntaxTheme: SyntaxTheme.obsidian()
                 ..backgroundColor = Theme.of(context).colorScheme.onPrimary,
-              fontSize: 14.0, // Font size
+              fontSize: 12.0, // Font size
               withZoom: false, // Enable/Disable zoom icon controls
               withLinesCount: true, // Enable/Disable line number
               // expanded: true, // Enable/Disable container expansion
