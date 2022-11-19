@@ -118,7 +118,7 @@ class _SlideScaffoldState extends State<SlideScaffold> {
                                     ),
                               ),
                               SizedBox(height: 6.0),
-                              Divider(height: 0),
+                              Divider(height: 1),
                               SizedBox(height: 12.0),
                             ],
                             Flexible(

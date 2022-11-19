@@ -16,7 +16,7 @@ class ThankYouSlide extends StatelessWidget {
           style: Theme.of(context).textTheme.headline3,
         ),
         SizedBox(height: 12.0),
-        Divider(height: 0),
+        Divider(height: 1),
         SizedBox(height: 12.0),
         SocialBlock(
           socialInfos: [

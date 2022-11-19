@@ -52,7 +52,7 @@ class CodeSnippet extends StatelessWidget {
               ],
             ),
           ),
-          Divider(height: 0),
+          Divider(height: 1),
           Container(
             alignment: Alignment.centerLeft,
             width: double.infinity,

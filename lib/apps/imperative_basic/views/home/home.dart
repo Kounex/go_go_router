@@ -30,7 +30,7 @@ class HomeView extends StatelessWidget {
                   title: 'imperative_basic',
                   subtitle: 'Go, Go Router!',
                 ),
-                Divider(height: 0),
+                Divider(height: 1),
                 Padding(
                   padding: const EdgeInsets.all(18.0),
                   child: Column(

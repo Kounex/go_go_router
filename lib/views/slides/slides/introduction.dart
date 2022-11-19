@@ -50,7 +50,7 @@ class IntroductionSlide extends StatelessWidget {
           ],
         ),
         SizedBox(height: 24.0),
-        Divider(height: 0),
+        Divider(height: 1),
         SizedBox(height: 32.0),
         SlideEnumerationBlock(
           entries: [

@@ -33,7 +33,7 @@ class BaseDrawer extends StatelessWidget {
               color: Theme.of(context).colorScheme.onPrimary,
             ),
           ),
-          Divider(height: 0),
+          Divider(height: 1),
           for (DrawerEntry entry in this.entries)
             ListTile(
               title: Text(

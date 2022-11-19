@@ -19,7 +19,7 @@ class WidgetTree2Slide extends StatelessWidget {
             width: 175,
           ),
           SizedBox(height: 24.0),
-          Divider(height: 0),
+          Divider(height: 1),
           SizedBox(height: 24.0),
           Text('What\'s the difference?'),
         ],
