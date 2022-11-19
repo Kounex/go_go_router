@@ -22,7 +22,8 @@ class SlideKeyboardListener extends StatelessWidget {
       focusNode: FocusNode(),
       onKeyEvent: (event) {
         if (event is KeyRepeatEvent || event is KeyDownEvent) {
-          if (event.logicalKey.keyLabel == 'Arrow Left') {
+          if (event.logicalKey.keyLabel == 'Arrow Left' ||
+              event.logicalKey.keyLabel == 'Page Up') {
             SlideService.animateToSlide(
               context,
               this.controller,
@@ -30,7 +31,8 @@ class SlideKeyboardListener extends StatelessWidget {
               this.amountSlides,
               to: SlideTo.prev,
             )?.call();
-          } else if (event.logicalKey.keyLabel == 'Arrow Right') {
+          } else if (event.logicalKey.keyLabel == 'Arrow Right' ||
+              event.logicalKey.keyLabel == 'Page Down') {
             SlideService.animateToSlide(
               context,
               this.controller,

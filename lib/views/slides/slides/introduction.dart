@@ -11,32 +11,36 @@ class IntroductionSlide extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SlideEnumerationBlock(
-                  useEnumerationChar: false,
-                  entries: [
-                    'René Schramowski',
-                    'Kounex',
-                  ],
-                ),
-                SizedBox(height: 32.0),
-                SlideEnumerationBlock(
-                  useEnumerationChar: false,
-                  entries: [
-                    'Solution Architect at Red Hat',
-                    'Flutter enthusiast',
-                  ],
-                ),
-              ],
+            Flexible(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SlideEnumerationBlock(
+                    useEnumerationChar: false,
+                    entries: [
+                      'René Schramowski',
+                      'Kounex',
+                    ],
+                  ),
+                  SizedBox(height: 32.0),
+                  SlideEnumerationBlock(
+                    useEnumerationChar: false,
+                    entries: [
+                      'Solution Architect at Red Hat',
+                      'Organisator of Flutter Hamburg (Flutter Meetup Network)',
+                    ],
+                  ),
+                ],
+              ),
             ),
+            SizedBox(width: 24.0),
             ClipRRect(
               child: Container(
-                width: 125,
-                height: 125,
+                width: 92,
+                height: 92,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12.0),
                   image: DecorationImage(

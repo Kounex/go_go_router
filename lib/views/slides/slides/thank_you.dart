@@ -21,6 +21,11 @@ class ThankYouSlide extends StatelessWidget {
         SocialBlock(
           socialInfos: [
             SocialEntry(
+              icon: Ionicons.cafe_outline,
+              linkText: 'Flutter Hamburg',
+              link: 'https://www.meetup.com/de-DE/flutter-meetup-hamburg/',
+            ),
+            SocialEntry(
               icon: Ionicons.logo_github,
               linkText: 'Kounex',
               link: 'https://github.com/Kounex',
