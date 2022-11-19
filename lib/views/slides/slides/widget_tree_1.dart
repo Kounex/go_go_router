@@ -16,6 +16,7 @@ class WidgetTree1Slide extends StatelessWidget {
               'assets/images/widget_tree_1.png',
               width: 200,
             ),
+            SizedBox(width: 12.0),
             Flexible(
               child: SlideEnumerationBlock(
                 customEntries: [

@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:go_go_router/shared/widgets/custom/composed/slide_scaffold/slide_scaffold.dart';
 import 'package:go_go_router/views/slides/slides/challenges.dart';
+import 'package:go_go_router/views/slides/slides/declarative_advanced_summary.dart';
+import 'package:go_go_router/views/slides/slides/declarative_basic_summary.dart';
 import 'package:go_go_router/views/slides/slides/exercise_time.dart';
 import 'package:go_go_router/views/slides/slides/imperative_advanced_summary.dart';
 import 'package:go_go_router/views/slides/slides/imperative_basic_summary.dart';
 import 'package:go_go_router/views/slides/slides/rise_of_flutter_web.dart';
+import 'package:go_go_router/views/slides/slides/router_basics_1.dart';
 import 'package:go_go_router/views/slides/slides/safe_space.dart';
 import 'package:go_go_router/views/slides/slides/thank_you.dart';
 import 'package:go_go_router/views/slides/slides/whats_the_problem.dart';
 
+import '../../shared/widgets/custom/atomic/social_block.dart';
 import 'slides/disclaimer.dart';
 import 'slides/example_hvv.dart';
 import 'slides/example_mail.dart';
@@ -18,6 +22,11 @@ import 'slides/example_steam.dart';
 import 'slides/introduction.dart';
 import 'slides/navigation_basics_1.dart';
 import 'slides/navigation_basics_2.dart';
+import 'slides/router_basics_2.dart';
+import 'slides/router_basics_3.dart';
+import 'slides/router_basics_4.dart';
+import 'slides/router_basics_5.dart';
+import 'slides/router_basics_6.dart';
 import 'slides/widget_tree_1.dart';
 import 'slides/widget_tree_2.dart';
 import 'slides/widget_tree_3.dart';
@@ -134,6 +143,53 @@ class _SlidesViewState extends State<SlidesView> {
     Slide(
       title: 'Challenges',
       content: ChallengesSlide(),
+    ),
+    Slide(
+      title: 'Router API',
+      content: RouterBasics1Slide(),
+    ),
+    Slide(
+      title: 'Overview',
+      content: RouterBasics2Slide(),
+    ),
+    Slide(
+      content: ExerciseTimeSlide(
+        text: 'declarative_basic',
+        bottom: SocialBlock(
+          socialInfos: [
+            SocialEntry(
+              link: 'https://github.com/Kounex/router_example',
+            ),
+          ],
+        ),
+      ),
+    ),
+    Slide(
+      title: 'Summary',
+      content: DeclarativeBasicSummarySlide(),
+    ),
+    Slide(
+      title: 'Overview',
+      content: RouterBasics3Slide(),
+    ),
+    Slide(
+      content: RouterBasics4Slide(),
+    ),
+    Slide(
+      content: RouterBasics5Slide(),
+    ),
+    Slide(
+      title: 'Preface',
+      content: RouterBasics6Slide(),
+    ),
+    Slide(
+      content: ExerciseTimeSlide(
+        text: 'declarative_advanced',
+      ),
+    ),
+    Slide(
+      title: 'Summary',
+      content: DeclarativeAdvancedSummarySlide(),
     ),
     Slide(
       content: ThankYouSlide(),

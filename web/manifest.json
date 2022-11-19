@@ -1,11 +1,11 @@
 {
-    "name": "go_go_router",
-    "short_name": "go_go_router",
+    "name": "Go, Go, Router!",
+    "short_name": "Go, Go, Router!",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
+    "background_color": "#dddddd",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Go, Go, Router!",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

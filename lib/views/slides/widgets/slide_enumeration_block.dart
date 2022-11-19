@@ -33,14 +33,12 @@ class SlideEnumerationBlock extends StatelessWidget {
   Widget build(BuildContext context) {
     return EnumerationBlock(
       entrySpacing: 6.0,
-      enumerationTopPadding: 2.5,
       useEnumerationChar: this.useEnumerationChar,
       entries: this.entries,
       customEntries: this
           .customEntries
           ?.map(
             (customEntry) => EnumerationEntry(
-              enumerationTopPadding: 2.5,
               extraTopSpacing: customEntry.extraTopSpacing ?? 0,
               text: customEntry.text,
               level: customEntry.level,

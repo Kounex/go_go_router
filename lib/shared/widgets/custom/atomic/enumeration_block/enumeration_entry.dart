@@ -49,7 +49,7 @@ class EnumerationEntry extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(
                 top: this.enumerationTopPadding,
-                left: this.levelSpacing * (this.level + 1),
+                left: this.levelSpacing * (this.level + 0),
                 right: 12.0,
               ),
               child: this.number != null
@@ -59,7 +59,9 @@ class EnumerationEntry extends StatelessWidget {
                     )
                   : Transform.scale(
                       scale: 3.0,
-                      origin: const Offset(1, 1),
+                      // origin: const Offset(-2, 2.75),
+                      // origin: const Offset(1, 1),
+                      origin: const Offset(-1, 1.5),
                       child: Text(
                         kEnumerationBullets[
                             this.level % kEnumerationBullets.length],

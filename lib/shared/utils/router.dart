@@ -38,7 +38,11 @@ class RouterUtils {
             pageBuilder: (context, state) => _webTransition(
               context,
               state,
-              StartView(),
+              Title(
+                color: Colors.black,
+                title: 'Home',
+                child: StartView(),
+              ),
             ),
           ),
           GoRoute(
@@ -46,8 +50,12 @@ class RouterUtils {
             pageBuilder: (context, state) => _webTransition(
               context,
               state,
-              SlidesView(
-                id: int.tryParse(state.queryParams['id'] ?? '') ?? 1,
+              Title(
+                color: Colors.black,
+                title: 'Slides',
+                child: SlidesView(
+                  id: int.tryParse(state.queryParams['id'] ?? '') ?? 1,
+                ),
               ),
             ),
           ),
@@ -56,7 +64,11 @@ class RouterUtils {
             pageBuilder: (context, state) => _webTransition(
               context,
               state,
-              ExamplesView(),
+              Title(
+                color: Colors.black,
+                title: 'Examples',
+                child: ExamplesView(),
+              ),
             ),
           ),
         ],

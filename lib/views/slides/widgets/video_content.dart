@@ -55,8 +55,8 @@ class _VideoContentState extends State<VideoContent> {
                     Column(
                       children: [
                         SizedBox(
-                          width: 112.0,
-                          child: ElevatedButton.icon(
+                          width: 64.0,
+                          child: CupertinoButton(
                             onPressed: () => _isPlaying
                                 ? _controller.pause().then(
                                       (_) => setState(() => _isPlaying = false),
@@ -64,11 +64,7 @@ class _VideoContentState extends State<VideoContent> {
                                 : _controller.play().then(
                                       (_) => setState(() => _isPlaying = true),
                                     ),
-                            label: SizedBox(
-                              width: 92.0,
-                              child: Text(_isPlaying ? 'Pause' : 'Play'),
-                            ),
-                            icon: Icon(
+                            child: Icon(
                               _isPlaying
                                   ? CupertinoIcons.pause_solid
                                   : CupertinoIcons.play_arrow_solid,
@@ -77,27 +73,23 @@ class _VideoContentState extends State<VideoContent> {
                         ),
                         SizedBox(height: 24.0),
                         SizedBox(
-                          width: 112.0,
-                          child: ElevatedButton.icon(
+                          width: 64.0,
+                          child: CupertinoButton(
                             onPressed: () => _controller.pause().then(
                               (_) {
                                 _controller.seekTo(Duration.zero);
                                 setState(() => _isPlaying = false);
                               },
                             ),
-                            label: SizedBox(
-                              width: 92.0,
-                              child: Text('Stop'),
-                            ),
-                            icon: Icon(
+                            child: Icon(
                               CupertinoIcons.stop_fill,
                             ),
                           ),
                         ),
                         SizedBox(height: 24.0),
                         SizedBox(
-                          width: 112.0,
-                          child: ElevatedButton.icon(
+                          width: 64.0,
+                          child: CupertinoButton(
                             onPressed: () => _playbackSpeed == 1.0
                                 ? _controller.setPlaybackSpeed(0.25).then(
                                       (_) =>
@@ -107,12 +99,7 @@ class _VideoContentState extends State<VideoContent> {
                                       (_) =>
                                           setState(() => _playbackSpeed = 1.0),
                                     ),
-                            label: SizedBox(
-                              width: 92.0,
-                              child: Text(
-                                  _playbackSpeed == 1.0 ? 'SlowMo' : 'Normal'),
-                            ),
-                            icon: Icon(
+                            child: Icon(
                               _playbackSpeed == 1.0
                                   ? CupertinoIcons.slowmo
                                   : CupertinoIcons.capslock_fill,
@@ -129,14 +116,14 @@ class _VideoContentState extends State<VideoContent> {
                 onPointerMove: (event) => _controller.seekTo(
                   Duration(
                     milliseconds: (_controller.value.duration.inMilliseconds *
-                            (event.localPosition.dx / 300))
+                            (event.localPosition.dx / 240))
                         .toInt(),
                   ),
                 ),
                 onPointerDown: (event) => _controller.seekTo(
                   Duration(
                     milliseconds: (_controller.value.duration.inMilliseconds *
-                            (event.localPosition.dx / 300))
+                            (event.localPosition.dx / 240))
                         .toInt(),
                   ),
                 ),

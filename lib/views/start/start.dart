@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_go_router/shared/utils/router.dart';
 
@@ -58,6 +59,34 @@ class StartView extends StatelessWidget {
                 ],
               )
             ],
+          ),
+          Positioned(
+            top: 24.0,
+            right: 24.0,
+            child: FloatingActionButton(
+              onPressed: () => showDialog(
+                context: context,
+                builder: (context) => SimpleDialog(
+                  title: Text('GitHub Repository'),
+                  contentPadding: const EdgeInsets.only(top: 12.0),
+                  children: [
+                    Image.asset(
+                      'assets/images/qr_code.png',
+                      width: 350,
+                    ),
+                  ],
+                ),
+              ),
+              backgroundColor: Theme.of(context).colorScheme.onPrimary,
+              shape: CircleBorder(
+                side:
+                    BorderSide(color: Theme.of(context).colorScheme.secondary),
+              ),
+              child: Icon(
+                CupertinoIcons.share,
+                color: Theme.of(context).colorScheme.onBackground,
+              ),
+            ),
           ),
         ],
       ),
