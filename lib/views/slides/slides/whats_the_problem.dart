@@ -13,7 +13,7 @@ class WhatsTheProblemSlide extends StatelessWidget {
           customEntries: [
             SlideEnumerationEntry(
               text:
-                  'From the Flutter docs (https://docs.flutter.dev/development/ui/navigation):',
+                  'From the Flutter docs:',
             ),
             SlideEnumerationEntry(
               text:
@@ -24,9 +24,15 @@ class WhatsTheProblemSlide extends StatelessWidget {
               text:
                   'Although named routes can handle deep links, the behavior is always the same and can’t be customized. When a new deep link is received by the platform, Flutter pushes a new Route onto the Navigator regardless where the user currently is.',
               level: 1,
-            ),
+            ),  
           ],
-        )
+        ),
+        SocialBlock(socialInfos: [
+          SocialEntry(
+            link:
+                'https://docs.flutter.dev/development/ui/navigation',
+          ),
+        ])
       ],
     );
   }
