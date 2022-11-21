@@ -67,8 +67,10 @@ class _SlideScaffoldState extends State<SlideScaffold> {
         alignment: Alignment.center,
         children: [
           WebScaffold(
-            body: Transform.scale(
+            body: AnimatedScale(
               scale: _slideScale,
+              duration: Duration(milliseconds: 200),
+              curve: Curves.easeIn,
               child: Center(
                 child: BaseCard(
                   padding: const EdgeInsets.symmetric(vertical: 24.0),
@@ -149,7 +151,7 @@ class _SlideScaffoldState extends State<SlideScaffold> {
           ),
           if (this.widget.slides.length > 1)
             Positioned(
-              bottom: 24.0 + MediaQuery.of(context).viewInsets.bottom,
+              bottom: 12.0 + MediaQuery.of(context).viewInsets.bottom,
               child: Card(
                 /// Using builder to delay building this subtree, this allows
                 /// the [PageView] inside [SlideScaffold] to be built and make
@@ -167,7 +169,7 @@ class _SlideScaffoldState extends State<SlideScaffold> {
               ),
             ),
           Positioned(
-            bottom: 24.0 + MediaQuery.of(context).viewInsets.bottom,
+            top: 24.0,
             right: 24.0,
             child: Card(
               child: SlideScale(

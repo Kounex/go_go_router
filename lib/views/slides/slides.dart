@@ -42,7 +42,7 @@ class SlidesView extends StatefulWidget {
 
   const SlidesView({
     super.key,
-    this.id = 0,
+    this.id = 1,
   });
 
   @override
