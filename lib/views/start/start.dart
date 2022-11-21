@@ -38,7 +38,7 @@ class StartView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 96.0,
+                    width: 102.0,
                     child: ElevatedButton(
                       onPressed: () => RouterUtils.navigateTo(
                         context,
@@ -49,7 +49,7 @@ class StartView extends StatelessWidget {
                   ),
                   SizedBox(width: 24.0),
                   SizedBox(
-                    width: 96.0,
+                    width: 102.0,
                     child: ElevatedButton(
                       onPressed: () => RouterUtils.navigateTo(
                         context,
