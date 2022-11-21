@@ -5,9 +5,10 @@ import 'package:go_go_router/shared/widgets/base/card.dart';
 import 'package:go_go_router/shared/widgets/base/web_scaffold.dart';
 import 'package:go_go_router/shared/widgets/custom/composed/slide_scaffold/keyboard_listener.dart';
 import 'package:go_go_router/shared/widgets/custom/composed/slide_scaffold/number.dart';
-import 'package:go_go_router/shared/widgets/custom/composed/slide_scaffold/scale.dart';
+import 'package:go_go_router/shared/widgets/custom/composed/slide_scaffold/widgets/widget_slider.dart';
 
 import 'controls.dart';
+import 'scale.dart';
 
 class Slide {
   final String? title;
@@ -151,29 +152,21 @@ class _SlideScaffoldState extends State<SlideScaffold> {
           ),
           if (this.widget.slides.length > 1)
             Positioned(
-              bottom: 12.0 +
+              bottom: 0 +
                   MediaQuery.of(context).viewInsets.bottom +
                   MediaQuery.of(context).viewPadding.bottom,
-              child: Card(
-                /// Using builder to delay building this subtree, this allows
-                /// the [PageView] inside [SlideScaffold] to be built and make
-                /// use of the [PageController], therefore it's possible to access
-                /// the [page] property of the controller
-                child: Builder(
-                  builder: (context) {
-                    return SlideControls(
-                      controller: _controller,
-                      id: _id,
-                      amountSlides: this.widget.slides.length,
-                    );
-                  },
+              child: WidgetSlider(
+                direction: ArrowDirection.up,
+                child: SlideControls(
+                  controller: _controller,
+                  id: _id,
+                  amountSlides: this.widget.slides.length,
                 ),
               ),
             ),
           Positioned(
-            top: 12.0,
-            right: 12.0,
-            child: Card(
+            top: 0,
+            child: WidgetSlider(
               child: SlideScale(
                 changeScale: _changeSlideScale,
               ),

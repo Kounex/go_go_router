@@ -8,15 +8,23 @@ class SlideScale extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       children: [
-        IconButton(
-          onPressed: () => this.changeScale(-0.1),
-          icon: Icon(CupertinoIcons.minus_circle),
-        ),
-        IconButton(
-          onPressed: () => this.changeScale(0.1),
-          icon: Icon(CupertinoIcons.plus_circle),
+        SizedBox(height: 12.0),
+        Card(
+          margin: const EdgeInsets.all(0),
+          child: Row(
+            children: [
+              IconButton(
+                onPressed: () => this.changeScale(-0.1),
+                icon: Icon(CupertinoIcons.minus_circle),
+              ),
+              IconButton(
+                onPressed: () => this.changeScale(0.1),
+                icon: Icon(CupertinoIcons.plus_circle),
+              ),
+            ],
+          ),
         ),
       ],
     );
