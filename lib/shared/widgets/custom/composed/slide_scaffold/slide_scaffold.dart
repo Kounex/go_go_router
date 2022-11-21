@@ -151,7 +151,9 @@ class _SlideScaffoldState extends State<SlideScaffold> {
           ),
           if (this.widget.slides.length > 1)
             Positioned(
-              bottom: 12.0 + MediaQuery.of(context).viewInsets.bottom,
+              bottom: 12.0 +
+                  MediaQuery.of(context).viewInsets.bottom +
+                  MediaQuery.of(context).viewPadding.bottom,
               child: Card(
                 /// Using builder to delay building this subtree, this allows
                 /// the [PageView] inside [SlideScaffold] to be built and make
@@ -169,8 +171,8 @@ class _SlideScaffoldState extends State<SlideScaffold> {
               ),
             ),
           Positioned(
-            top: 24.0,
-            right: 24.0,
+            top: 12.0,
+            right: 12.0,
             child: Card(
               child: SlideScale(
                 changeScale: _changeSlideScale,
